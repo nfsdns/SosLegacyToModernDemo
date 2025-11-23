@@ -1,6 +1,6 @@
 ﻿namespace SosLegacyToModernDemo.Models;
 
-public class CustomerOrderSummary
+public class CustomerOrderSummaryDto
 {
     public long CustomerId { get; set; } // or it can be Guid
     public string FullName { get; set; } = string.Empty;

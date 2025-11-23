@@ -42,7 +42,7 @@ public class OrderReportService : IOrderReportService
         _context = new InMemoryContext(); // If there is no DI
     }
 
-    public List<CustomerOrderSummary> GetTopCustomerOrders(
+    public List<CustomerOrderSummaryDto> GetTopCustomerOrders(
         DateTime startDate,
         DateTime endDate,
         long minAmount)
@@ -55,7 +55,7 @@ public class OrderReportService : IOrderReportService
             let totalSpent = g.Sum(o => o.TotalAmount)
             where totalSpent >= minAmount
             orderby totalSpent descending
-            select new CustomerOrderSummary
+            select new CustomerOrderSummaryDto
             {
                 CustomerId = g.Key.Id,
                 FullName = g.Key.FullName,

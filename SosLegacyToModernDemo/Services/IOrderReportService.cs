@@ -9,7 +9,7 @@ namespace SosLegacyToModernDemo.Services;
 
 public interface IOrderReportService
 {
-    List<CustomerOrderSummary> GetTopCustomerOrders(
+    List<CustomerOrderSummaryDto> GetTopCustomerOrders(
        DateTime startDate,
        DateTime endDate,
        long minAmount);
